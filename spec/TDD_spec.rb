@@ -54,5 +54,25 @@ describe "#my_transpose" do
             expect(array.my_transpose).to eq([[0, 3, 6], [1, 4, 7], [2, 5, 8]])
         end
     end
-
 end
+
+describe "#stock_picker" do
+    context "when the array has less than two elements" do 
+        it "should raise an error" do
+            expect{[1].stock_picker}.to raise_error(ArgumentError)
+        end
+    end
+
+    context "when the array has two or more elements" do 
+        it "returns the pair that is the most profitable" do
+            expect([20, 30, 50, 80].stock_picker).to eq([0,3])
+        end
+    end
+
+    context "when profit is always negative" do 
+        it "returns the pair that is the most profitable" do
+            expect([-20, -30, -50, -80].stock_picker).to eq([0,1])
+        end
+    end
+end
+

@@ -42,5 +42,25 @@ class Array
         arr
     
     end
+
+
+    def stock_picker
+        raise ArgumentError if self.length < 2
+        profit = 0
+        indices = []
+        (0...self.length).each do |i|
+            (i + 1...self.length).each do |j|               
+                if profit < self[j] - self[i]
+                    indices = [i, j] 
+                    profit = self[j] - self[i]
+                elsif profit < (self[j] - self[i]) || profit == 0
+                    indices = [i, j] 
+                    profit = self[j] - self[i]
+                end
+        
+            end
+        end
+        return indices
+    end
 end
 
