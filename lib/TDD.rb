@@ -79,7 +79,10 @@ class TowerofHanoi
     end
 
     def get_move
-
+        print "Enter which stack to move from"
+        start = gets.chomp.to_a
+        print "Where do you want to move?"
+        position = gets.chomp.to_a
     end
 
     def valid_move?
