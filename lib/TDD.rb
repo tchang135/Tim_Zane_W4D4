@@ -21,5 +21,26 @@ class Array
         end
         return arr
     end
+
+
+    def my_transpose
+        self.each do |ele|
+            raise ArgumentError if ele.length != self.length
+        end 
+        arr = [] 
+        i = 0 
+        while i < self.length 
+            subArr = []
+            j = 0 
+            while j < self.length 
+                subArr << self[j][i]
+                j += 1 
+            end
+            arr << subArr
+            i += 1 
+        end
+        arr
+    
+    end
 end
 
