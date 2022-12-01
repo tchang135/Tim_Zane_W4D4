@@ -76,3 +76,20 @@ describe "#stock_picker" do
     end
 end
 
+describe TowerofHanoi do 
+    subject(:game) {TowerofHanoi.new(5)}
+    describe "#initialize" do 
+        it "sets @towers to an empty 3x3 2D array" do 
+            expect(game.towers.length).to eq(3)
+            expect(game.towers[2]).to eq([])
+        end
+
+        it "creates unique subarrays within our 2D array" do 
+            game.towers[2] = 4
+            expect(game.towers[1]).to_not eq(4)
+        end
+    end
+
+end
+
+

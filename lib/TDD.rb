@@ -62,5 +62,40 @@ class Array
         end
         return indices
     end
+
 end
 
+
+class TowerofHanoi
+    attr_accessor :towers
+    
+    def initialize(num_rings)
+        @towers = Array.new(3) {Array.new}
+        @num_rings = num_rings
+        (0...num_rings).each do |ring|
+            @towers[0] << ring 
+        end
+        @towers[0] = @towers[0].shuffle
+    end
+
+    def get_move
+
+    end
+
+    def valid_move?
+
+    end
+
+    def move 
+
+    end
+
+    def won?
+
+    end
+
+end
+
+t = TowerofHanoi.new(3)
+
+p t
